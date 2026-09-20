@@ -1,1 +1,540 @@
-index.html
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Scolaire - Plateforme éducative</title>
+
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background: #f4f6f8;
+    color: #222;
+}
+
+header {
+    background: #0b5ed7;
+    color: white;
+    text-align: center;
+    padding: 30px 15px;
+}
+
+header h1 {
+    font-size: 32px;
+    margin-bottom: 8px;
+}
+
+nav {
+    background: #063b8f;
+    padding: 15px;
+    text-align: center;
+    position: sticky;
+    top: 0;
+    z-index: 10;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    margin: 0 10px;
+    font-weight: bold;
+}
+
+.hero {
+    background: white;
+    text-align: center;
+    padding: 70px 20px;
+}
+
+.hero h2 {
+    color: #0b5ed7;
+    font-size: 32px;
+    margin-bottom: 15px;
+}
+
+.hero p {
+    font-size: 18px;
+    margin-bottom: 25px;
+}
+
+.btn {
+    background: #0b5ed7;
+    color: white;
+    border: none;
+    padding: 12px 22px;
+    border-radius: 8px;
+    cursor: pointer;
+    text-decoration: none;
+    display: inline-block;
+}
+
+.section {
+    max-width: 1100px;
+    margin: auto;
+    padding: 45px 20px;
+}
+
+.section > h2 {
+    text-align: center;
+    color: #0b5ed7;
+    margin-bottom: 30px;
+}
+
+.cards {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+}
+
+.card {
+    background: white;
+    width: 300px;
+    padding: 25px;
+    border-radius: 12px;
+    box-shadow: 0 3px 12px #00000018;
+}
+
+.card h3 {
+    color: #0b5ed7;
+    margin-bottom: 12px;
+}
+
+.admin {
+    max-width: 600px;
+    margin: auto;
+}
+
+input[type="password"],
+input[type="file"] {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    background: white;
+}
+
+.document {
+    background: white;
+    margin: 10px 0;
+    padding: 15px;
+    border-radius: 9px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 10px;
+}
+
+.document a {
+    color: #0b5ed7;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+.delete {
+    background: #dc3545;
+    color: white;
+    border: none;
+    padding: 8px 12px;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+.message {
+    margin-top: 12px;
+    font-weight: bold;
+}
+
+footer {
+    background: #063b8f;
+    color: white;
+    text-align: center;
+    padding: 25px;
+    margin-top: 30px;
+}
+
+@media(max-width:600px) {
+
+    nav a {
+        display: inline-block;
+        margin: 7px;
+        font-size: 14px;
+    }
+
+    .hero h2 {
+        font-size: 26px;
+    }
+
+    .document {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<header>
+    <h1>🏫 SCOLAIRE</h1>
+    <p>Plateforme éducative</p>
+</header>
+
+<nav>
+    <a href="#accueil">Accueil</a>
+    <a href="#cours">Cours</a>
+    <a href="#documents">Documents</a>
+    <a href="#actualites">Actualités</a>
+    <a href="#contact">Contact</a>
+    <a href="#admin">Administration</a>
+</nav>
+
+<section class="hero" id="accueil">
+
+    <h2>Bienvenue sur notre plateforme scolaire</h2>
+
+    <p>
+        Retrouvez les cours, exercices, annales
+        et documents scolaires.
+    </p>
+
+    <a href="#documents" class="btn">
+        📚 Voir les documents
+    </a>
+
+</section>
+
+<section class="section" id="cours">
+
+    <h2>📚 Nos matières</h2>
+
+    <div class="cards">
+
+        <div class="card">
+            <h3>📐 Mathématiques</h3>
+            <p>
+                Cours, exercices, QCM et situations d'intégration.
+            </p>
+        </div>
+
+        <div class="card">
+            <h3>⚛️ Physique-Chimie</h3>
+            <p>
+                Cours et exercices pour progresser.
+            </p>
+        </div>
+
+        <div class="card">
+            <h3>💻 Informatique</h3>
+            <p>
+                Programmation, numérique et nouvelles technologies.
+            </p>
+        </div>
+
+    </div>
+
+</section>
+
+<section class="section" id="documents">
+
+    <h2>📄 Documents scolaires</h2>
+
+    <div id="documentsListe">
+        <p style="text-align:center;">
+            Aucun document disponible pour le moment.
+        </p>
+    </div>
+
+</section>
+
+<section class="section" id="actualites">
+
+    <h2>📢 Actualités</h2>
+
+    <div class="cards">
+
+        <div class="card">
+            <h3>📅 Examens</h3>
+            <p>
+                Consultez les dates des prochains examens.
+            </p>
+        </div>
+
+        <div class="card">
+            <h3>🏆 Activités scolaires</h3>
+            <p>
+                Découvrez les activités et événements scolaires.
+            </p>
+        </div>
+
+    </div>
+
+</section>
+
+<section class="section" id="admin">
+
+    <h2>🔐 Espace administrateur</h2>
+
+    <div class="card admin">
+
+        <h3>Connexion</h3>
+
+        <br>
+
+        <input
+            type="password"
+            id="codeAdmin"
+            placeholder="Entrer le code administrateur"
+        >
+
+        <br><br>
+
+        <button class="btn" onclick="connexion()">
+            🔑 Se connecter
+        </button>
+
+        <p id="message" class="message"></p>
+
+    </div>
+
+    <div
+        id="panelAdmin"
+        class="card admin"
+        style="display:none; margin-top:20px;"
+    >
+
+        <h3>⚙️ Administration</h3>
+
+        <p>
+            Bienvenue dans ton espace administrateur.
+        </p>
+
+        <br>
+
+        <input
+            type="file"
+            id="fichier"
+            accept=".pdf,.doc,.docx,.ppt,.pptx"
+        >
+
+        <br><br>
+
+        <button class="btn" onclick="ajouterDocument()">
+            ➕ Ajouter un document
+        </button>
+
+        <br><br>
+
+        <button
+            class="btn"
+            style="background:#6c757d;"
+            onclick="deconnexion()"
+        >
+            Se déconnecter
+        </button>
+
+    </div>
+
+</section>
+
+<section class="section" id="contact">
+
+    <h2>📞 Contact</h2>
+
+    <div class="card" style="margin:auto;">
+
+        <p>
+            <strong>📍 Adresse :</strong>
+            Burkina Faso
+        </p>
+
+        <br>
+
+        <p>
+            <strong>📧 Email :</strong>
+            coulibalymouslim@gmail.com
+        </p>
+
+        <br>
+
+        <p>
+            <strong>📱 Téléphone :</strong>
+            68181172
+        </p>
+
+    </div>
+
+</section>
+
+<footer>
+
+    <p>
+        © 2026 Scolaire - Tous droits réservés
+    </p>
+
+</footer>
+
+<script>
+
+/* =========================
+   CODE ADMINISTRATEUR
+   ========================= */
+
+const CODE_ADMIN = "Ben";
+
+let connecte = false;
+
+
+/* =========================
+   CONNEXION
+   ========================= */
+
+function connexion() {
+
+    const code =
+        document.getElementById("codeAdmin").value;
+
+    const message =
+        document.getElementById("message");
+
+    if (code === CODE_ADMIN) {
+
+        connecte = true;
+
+        document.getElementById(
+            "panelAdmin"
+        ).style.display = "block";
+
+        message.textContent =
+            "✅ Connexion réussie !";
+
+        message.style.color = "green";
+
+    } else {
+
+        message.textContent =
+            "❌ Code incorrect.";
+
+        message.style.color = "red";
+
+    }
+
+}
+
+
+/* =========================
+   DECONNEXION
+   ========================= */
+
+function deconnexion() {
+
+    connecte = false;
+
+    document.getElementById(
+        "panelAdmin"
+    ).style.display = "none";
+
+    document.getElementById(
+        "codeAdmin"
+    ).value = "";
+
+}
+
+
+/* =========================
+   AJOUTER DOCUMENT
+   ========================= */
+
+function ajouterDocument() {
+
+    if (!connecte) {
+
+        alert(
+            "Vous devez être administrateur."
+        );
+
+        return;
+
+    }
+
+    const input =
+        document.getElementById("fichier");
+
+    if (input.files.length === 0) {
+
+        alert(
+            "Sélectionnez d'abord un document."
+        );
+
+        return;
+
+    }
+
+    const fichier =
+        input.files[0];
+
+    const url =
+        URL.createObjectURL(fichier);
+
+    const documentDiv =
+        document.createElement("div");
+
+    documentDiv.className =
+        "document";
+
+    const lien =
+        document.createElement("a");
+
+    lien.href = url;
+
+    lien.download =
+        fichier.name;
+
+    lien.textContent =
+        "📄 " + fichier.name;
+
+    const supprimer =
+        document.createElement("button");
+
+    supprimer.className =
+        "delete";
+
+    supprimer.textContent =
+        "Supprimer";
+
+    supprimer.onclick =
+        function() {
+
+            documentDiv.remove();
+
+            URL.revokeObjectURL(url);
+
+        };
+
+    documentDiv.appendChild(lien);
+
+    documentDiv.appendChild(supprimer);
+
+    document.getElementById(
+        "documentsListe"
+    ).appendChild(documentDiv);
+
+    input.value = "";
+
+    alert(
+        "✅ Document ajouté !"
+    );
+
+}
+
+</script>
+
+</body>
+</html>
